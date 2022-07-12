@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('cascade')->onDelete('cascade');
 
             $table->tinyInteger('temperature');
+            $table->boolean('is_available')->default(true);
         });
     }
 

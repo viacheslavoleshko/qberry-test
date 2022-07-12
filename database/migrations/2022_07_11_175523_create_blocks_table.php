@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('room_id')->references('id')->on('rooms')->onUpdate('cascade')->onDelete('cascade');
 
             $table->float('volume')->default(2);
+            $table->boolean('is_available')->default(true);
         });
     }
 
