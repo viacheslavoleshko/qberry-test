@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Booking extends Model
 {
@@ -42,5 +43,11 @@ class Booking extends Model
         return $this->hasMany(Block::class);
     }
 
+    public static function boot() {
+        parent::boot();
 
+        self::creating(function ($model) {
+            $model->access_code = Str::random(12);
+        });
+    }
 }

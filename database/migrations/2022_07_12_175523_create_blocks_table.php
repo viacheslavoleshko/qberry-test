@@ -19,8 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('room_id')->index();
             $table->foreign('room_id')->references('id')->on('rooms')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->float('volume')->default(2);
-            $table->boolean('is_available')->default(true);
+            $table->unsignedBigInteger('booking_id')->index()->nullable();
+            $table->foreign('booking_id')->references('id')->on('bookings')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('volume')->default(2);
         });
     }
 
