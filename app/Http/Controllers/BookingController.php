@@ -17,13 +17,8 @@ class BookingController extends Controller
 
     public function store(BookingRequest $request, Room $room)
     {
-        $validated = $request->validated();
-        // $available_volume = $room->blocks()->available()->sum('volume');
 
-        // $validated = $request->validate([
-        //     'days' => 'required|numeric|gte:1|lte:24',
-        //     'volume' => 'required|numeric|gte:1|lte:10',
-        // ]);
+        $validated = $request->validated();
 
         $booking = $room->bookings()->create([
             'days' => $validated['days'],

@@ -14,6 +14,7 @@ class Room extends Model
     protected $fillable = [
         'location_id',
         'temperature',
+        'is_available',
     ];
 
     public function blocks()

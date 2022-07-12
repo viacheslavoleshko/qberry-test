@@ -26,9 +26,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
 
             $table->string('access_code');
-            $table->float('volume');
+            $table->unsignedInteger('volume');
             $table->unsignedInteger('days');
-            $table->float('debt')->nullable();
+            $table->float('debt')->default(0);
             $table->timestamps();
         });
     }
