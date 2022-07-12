@@ -6,15 +6,10 @@ use App\Models\Room;
 use App\Models\Booking;
 use App\Http\Requests\BookingRequest;
 use App\Http\Resources\BookingResource;
+use App\Models\Location;
 
 class BookingController extends Controller
 {
-    public function index()
-    {
-        $bookings = Booking::all();
-        return BookingResource::collection($bookings);
-    }
-
     public function store(BookingRequest $request, Room $room)
     {
 

@@ -15,9 +15,4 @@ use App\Http\Controllers\BookingController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('bookings', [BookingController::class, 'index']);
 Route::post('bookings/{room}', [BookingController::class, 'store']);
