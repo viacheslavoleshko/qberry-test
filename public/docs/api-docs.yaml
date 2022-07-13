@@ -87,13 +87,13 @@ paths:
             type: integer
             format: int32
       responses:
-        200:
-          description: successful operation
+        201:
+          description: created
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Booking"
-        '422':
+        422:
           description: Invalid Order
           content:
             application/json:
@@ -266,9 +266,6 @@ components:
         room_id:
           type: integer
           format: int64
-        access_code:
-          type: string
-          format: int32
         volume:
           type: number
           format: float

@@ -31,7 +31,6 @@ class BookingController extends Controller
                 'is_available' => false,
             ]);
         }
-
         return new BookingResource($booking);
 
     }
