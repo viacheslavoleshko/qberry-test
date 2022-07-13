@@ -1,4 +1,4 @@
-## Installing & Depoloying
+## Installing & Deploying
 
     git clone
     composer update
